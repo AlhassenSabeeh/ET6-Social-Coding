@@ -12,7 +12,7 @@ Scenario:
 A cybersecurity team is investigating an authentication system that occasionally flags legitimate login attempts as 
 suspicious. The system checks multiple conditions to determine if a login attempt should be blocked.
 One of the core checks involves the following rule:
-¬(A∧(B∨¬B))
+¬(A∧(1)) = ~(A and 1) = ~A 
 where:
 A: The user has provided the correct login credentials.
 B: The login attempt is from a trusted device.
@@ -26,3 +26,15 @@ Apply Boolean law to simplify it.
 Interpret what the final expression means in the context of allowing or blocking a login attempt.
 
 """
+
+passwords = ["0", "1", "2", "3"]
+def challenge1(credential):
+    pass1 = input("Enter the password: ")
+    if pass1 in passwords:
+        credential = True
+    else:
+        credential = False
+    if credential == True:
+        print("Login is successful")
+    else:
+        print("Not allowed!")
